@@ -7,7 +7,7 @@ var Code = map[string]string{
 }
 
 var PriceMatrix = map[string]map[int]float32{
-	"VS5": {
+	"VS5":  {
 		3: 6.99,
 		5: 8.99,
 	},

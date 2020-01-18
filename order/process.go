@@ -14,23 +14,31 @@ func ProcessOrder(code string, quantity int) (*structs.OrderResp, error) {
 	priceMap := config.PriceMatrix[code]
 	// sort the price
 	sortedQuantites := sortedKeys(priceMap)
+	lenAr := len(sortedQuantites) - 1
 	preVal := quantity
 	for _, qty := range sortedQuantites {
-		q := preVal % qty
-		r := preVal / qty
-		if preVal == quantity || q > qty || q == 0 {
-			totalPrice += priceMap[qty] * float32(r)
+		if qty > preVal {
+			continue
+		}
+		rem := preVal % qty
+		if rem == 0 {
+			totalPrice += priceMap[qty] * float32(preVal/qty)
 			packs = append(packs, structs.Price{
 				Pack:   qty,
-				QtySet: r,
+				QtySet: preVal/qty,
 				Price:  priceMap[qty],
 			})
-			if q == 0 {
-				preVal = 0
-				break
-			}
-			//update preVal with current value
-			preVal = q
+			preVal = 0
+			break
+		}
+		if rem >= sortedQuantites[lenAr] {
+			totalPrice += priceMap[qty] * float32(preVal/qty)
+			packs = append(packs, structs.Price{
+				Pack:   qty,
+				QtySet: preVal/qty,
+				Price:  priceMap[qty],
+			})
+			preVal = rem
 		}
 	}
 	if preVal == 0 {
