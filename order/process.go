@@ -25,7 +25,7 @@ func ProcessOrder(code string, quantity int) (*structs.OrderResp, error) {
 			totalPrice += priceMap[qty] * float32(preVal/qty)
 			packs = append(packs, structs.Price{
 				Pack:   qty,
-				QtySet: preVal/qty,
+				QtySet: preVal / qty,
 				Price:  priceMap[qty],
 			})
 			preVal = 0
@@ -35,7 +35,7 @@ func ProcessOrder(code string, quantity int) (*structs.OrderResp, error) {
 			totalPrice += priceMap[qty] * float32(preVal/qty)
 			packs = append(packs, structs.Price{
 				Pack:   qty,
-				QtySet: preVal/qty,
+				QtySet: preVal / qty,
 				Price:  priceMap[qty],
 			})
 			preVal = rem
