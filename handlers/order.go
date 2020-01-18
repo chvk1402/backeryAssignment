@@ -1,10 +1,10 @@
 package handlers
 
 import (
+	"backery/order"
+	"backery/structs"
+	"backery/utils/responses"
 	"fmt"
-	"github.com/backery/order"
-	"github.com/backery/structs"
-	"github.com/backery/utils/responses"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"net/http"

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/backery/server"
+	"backery/server"
 	"log"
 )
 

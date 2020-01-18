@@ -1,7 +1,7 @@
 package order
 
 import (
-	"github.com/backery/structs"
+	"backery/structs"
 	"reflect"
 	"testing"
 )

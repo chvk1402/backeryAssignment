@@ -1,4 +1,4 @@
-module github.com/backery
+module backery
 
 go 1.13
 

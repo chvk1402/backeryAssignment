@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/backery/router"
+	"backery/router"
 )
 
 func Run() error {

@@ -1,9 +1,9 @@
 package order
 
 import (
+	"backery/config"
+	"backery/structs"
 	"fmt"
-	"github.com/backery/config"
-	"github.com/backery/structs"
 	"sort"
 )
 

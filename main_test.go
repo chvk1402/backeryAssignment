@@ -1,10 +1,10 @@
 package main
 
 import (
+	"backery/router"
+	"backery/structs"
 	"bytes"
 	"encoding/json"
-	"github.com/backery/router"
-	"github.com/backery/structs"
 	"io/ioutil"
 	"log"
 	"net"

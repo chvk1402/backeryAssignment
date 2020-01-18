@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/backery/handlers"
+	"backery/handlers"
 	"github.com/gin-gonic/gin"
 )
 
