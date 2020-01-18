@@ -24,7 +24,7 @@ func TestProcessOrder(t *testing.T) {
 				quantity: 10,
 			},
 			want: &structs.OrderResp{
-				Code:  "VS5",
+				Code:       "VS5",
 				TotalPrice: 17.98,
 				Packs: []structs.Price{
 					{
@@ -43,7 +43,7 @@ func TestProcessOrder(t *testing.T) {
 				quantity: 14,
 			},
 			want: &structs.OrderResp{
-				Code:  "MB11",
+				Code:       "MB11",
 				TotalPrice: 54.8,
 				Packs: []structs.Price{
 					{
@@ -67,7 +67,7 @@ func TestProcessOrder(t *testing.T) {
 				quantity: 15,
 			},
 			want: &structs.OrderResp{
-				Code:  "CF",
+				Code:       "CF",
 				TotalPrice: 28.89,
 				Packs: []structs.Price{
 					{
@@ -90,7 +90,7 @@ func TestProcessOrder(t *testing.T) {
 				code:     "VJ",
 				quantity: 15,
 			},
-			want: nil,
+			want:    nil,
 			wantErr: true,
 		},
 		{
@@ -99,7 +99,7 @@ func TestProcessOrder(t *testing.T) {
 				code:     "CF",
 				quantity: 13,
 			},
-			want: nil,
+			want:    nil,
 			wantErr: true,
 		},
 	}

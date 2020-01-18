@@ -7,7 +7,7 @@ import (
 	"sort"
 )
 
-func ProcessOrder(code string, quantity int) (*structs.OrderResp, error){
+func ProcessOrder(code string, quantity int) (*structs.OrderResp, error) {
 	var packs []structs.Price
 	totalPrice := float32(0)
 	//get priceMap for the code
@@ -16,9 +16,9 @@ func ProcessOrder(code string, quantity int) (*structs.OrderResp, error){
 	sortedQuantites := sortedKeys(priceMap)
 	preVal := quantity
 	for _, qty := range sortedQuantites {
-		q := preVal%qty
-		r := preVal/qty
-		if preVal == quantity || q > qty || q ==0 {
+		q := preVal % qty
+		r := preVal / qty
+		if preVal == quantity || q > qty || q == 0 {
 			totalPrice += priceMap[qty] * float32(r)
 			packs = append(packs, structs.Price{
 				Pack:   qty,
@@ -36,8 +36,8 @@ func ProcessOrder(code string, quantity int) (*structs.OrderResp, error){
 	if preVal == 0 {
 		return &structs.OrderResp{
 			TotalPrice: totalPrice,
-			Code:  code,
-			Packs: packs,
+			Code:       code,
+			Packs:      packs,
 		}, nil
 	}
 	return nil, fmt.Errorf("the given order cannot be divided in to available packet sets")

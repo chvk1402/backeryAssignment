@@ -14,7 +14,7 @@ func Calculate(c *gin.Context) {
 	req := &structs.OrderReq{}
 
 	err := c.MustBindWith(req, binding.JSON)
-	if err!= nil {
+	if err != nil {
 		responses.ResponseWithError(c, http.StatusBadRequest, fmt.Errorf("incorrect request format"))
 		return
 	}

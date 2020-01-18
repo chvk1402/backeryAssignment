@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Init() *gin.Engine{
+func Init() *gin.Engine {
 	r := gin.New()
 	r.Use(gin.Recovery())
 

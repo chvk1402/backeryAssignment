@@ -1,8 +1,8 @@
 package structs
 
 type Price struct {
-	Pack   int `json:"pack"`
-	QtySet int `json:"quantity"`
+	Pack   int     `json:"pack"`
+	QtySet int     `json:"quantity"`
 	Price  float32 `json:"price(in $)"`
 }
 
@@ -12,7 +12,7 @@ type OrderReq struct {
 }
 
 type OrderResp struct {
-	Code  string  `json:"code"`
+	Code       string  `json:"code"`
 	TotalPrice float32 `json:"total_price"`
-	Packs []Price `json:"packs"`
+	Packs      []Price `json:"packs"`
 }
